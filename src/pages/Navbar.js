@@ -14,6 +14,9 @@ function Navbar() {
   const JoinClick = () => history.push("./Join");
   const LoginClick = () => history.push("./Login");
 
+
+ 
+
   return (
     <Body>
       <Header>
@@ -22,7 +25,9 @@ function Navbar() {
         </AutohubLogoPart>
 
         <HeaderLeftListPart>
-          <HeaderLeftList>살때</HeaderLeftList>
+
+        
+          <HeaderLeftList>살때s</HeaderLeftList>
           <HeaderLeftList>팔때</HeaderLeftList>
           <HeaderLeftList>직영차</HeaderLeftList>
           <HeaderLeftList button type="button" onClick={AboutAutohub}>단지안내</HeaderLeftList>

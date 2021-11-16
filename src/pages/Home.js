@@ -61,7 +61,7 @@ function Home() {
 
 <HeaderButtonPart>
 
-<HeaderButton primary>현대</HeaderButton>
+<HeaderButton primary>현대a</HeaderButton>
 <HeaderButton primary>기아</HeaderButton>
 <HeaderButton primary>Bmw</HeaderButton>
 <HeaderButton primary>벤츠</HeaderButton>
