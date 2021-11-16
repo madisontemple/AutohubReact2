@@ -14,8 +14,20 @@ function Navbar() {
   const JoinClick = () => history.push("./Join");
   const LoginClick = () => history.push("./Login");
 
+  
+const LeftMenus2 = [
+      { url:"./Buy", value:"살때" },{url:"./Sell", value:"살때" },{url:"./Managed", value:"직영차" },{url:"./AboutAutohub", value:"단지안내" },{url:"./CCenter", value:"고객센터" }
 
+]
+  const LeftMenus  = [["./Buy","실떼"],["./Sell","팔때"],["./Managed","직영차"],["./AboutAutohub","단지안내"],["./CCenter","고객센터"]];
+
+  const LeftMenuList = LeftMenus2.map((LeftMenus2) =>  <HeaderLeftList url={LeftMenus2.url}>{LeftMenus2.value}</HeaderLeftList>); {/* 윗 부분을 맵함수로 입력 */}
+  const RightMenus = ["회원가입","로그인"];
+  const RightMenuList = RightMenus.map((RightMenus) => <HeaderRightList>{RightMenus}</HeaderRightList>); {/* 이 부분도 맵함수로 처리 했음 */}
+  
  
+ 
+
 
   return (
     <Body>
@@ -23,21 +35,8 @@ function Navbar() {
         <AutohubLogoPart>
           <AutohubLogo button type="button" onClick={HomeClick} src="/images/AUTOHUB Logo.png" />
         </AutohubLogoPart>
-
-        <HeaderLeftListPart>
-
-        
-          <HeaderLeftList>살때s</HeaderLeftList>
-          <HeaderLeftList>팔때</HeaderLeftList>
-          <HeaderLeftList>직영차</HeaderLeftList>
-          <HeaderLeftList button type="button" onClick={AboutAutohub}>단지안내</HeaderLeftList>
-          <HeaderLeftList>고객센터</HeaderLeftList>
-        </HeaderLeftListPart>
-
-        <HeaderRightListPart>
-          <HeaderRightList>회원가입</HeaderRightList>
-          <HeaderRightList>로그인</HeaderRightList>
-        </HeaderRightListPart>
+      {/* 위에서 만든 맵함수를 적용 시킴 */ }  <HeaderLeftListPart> {LeftMenuList}</HeaderLeftListPart>
+        <HeaderRightListPart>{RightMenuList}</HeaderRightListPart>
       </Header>
     </Body>
   );

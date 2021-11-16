@@ -49,7 +49,12 @@ function AboutAutohub() {
 
   useEffect(() => {
     Aos.init({ duration: 2000 });
+
+
   }, []);
+
+  const Menus = ["주요특장점","층별안내","오시는 길","프로모션"];
+  const MenuLists = Menus.map((Menus) => <LI>{Menus}</LI>);
 
   // useEffect
   // useState
@@ -121,18 +126,7 @@ function AboutAutohub() {
             <ALI button type="button" onClick={AboutAutohub}>
               단지안내
             </ALI>
-            <LI button type="button" onClick={CharClick}>
-              주요특장점
-            </LI>
-            <LI button type="button" onClick={FloorClick}>
-              층별안내
-            </LI>
-            <LI button type="button" onClick={ContactClick}>
-              오시는 길
-            </LI>
-            <LI button type="button" onClick={SellClick}>
-              프로모션
-            </LI>
+            <MenuLists>{Menus}</MenuLists>
           </ul>
         </HeaderListPart>
       </Header>

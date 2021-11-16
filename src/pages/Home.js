@@ -39,6 +39,13 @@ function Home() {
 
   `;
 
+  const Buttons = ["현대","기아","Bmw","벤츠","제네시스"];
+  const ButtonList = Buttons.map((Buttons) => <HeaderButton>{Buttons}</HeaderButton>);
+  const Questions = ["차량 구매시 필요서류는 무엇인가요?","차량 구매시 카드로 구매가 가능한가요?","대체구매(차량맞교환)가 가능한가요?"];
+  const FAQLists = Questions.map((Questions) => <FAQList>{Questions}</FAQList>);
+
+
+  
   return (
     <Body>
     <HeaderWrapper>
@@ -59,14 +66,7 @@ function Home() {
 </HeaderRightSearchPart>
 
 
-<HeaderButtonPart>
-
-<HeaderButton primary>현대a</HeaderButton>
-<HeaderButton primary>기아</HeaderButton>
-<HeaderButton primary>Bmw</HeaderButton>
-<HeaderButton primary>벤츠</HeaderButton>
-<HeaderButton primary>제네시스</HeaderButton>
-</HeaderButtonPart>
+<HeaderButtonPart>{ButtonList}</HeaderButtonPart>
 
 </HeaderRightPart>
 </HeaderRightWrapper>
@@ -212,7 +212,8 @@ margin: 10px 0px;
 
 `;
 const HeaderButton = styled.button`
-  background: ${props => props.primary ? "#f11843" : "white"};
+  /* background: ${props => props.primary ? "#f11843" : "white"}; */
+  background-color: #f11843;
   margin: 0px 17px 0px 0px;
   width: 7.5rem;
   height: 3rem;
