@@ -3,7 +3,10 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { NavLink as Link } from "react-router-dom";
 import Home from "../pages/Home";
+
 function Navbar() {
+
+  
   const history = useHistory();
   const HomeClick = () => history.push("./");
   const BuyClick = () => history.push("./Buy");
@@ -15,10 +18,14 @@ function Navbar() {
   const LoginClick = () => history.push("./Login");
 
   
+
+  
 const LeftMenus2 = [
       { url:"./Buy", value:"살때" },{url:"./Sell", value:"살때" },{url:"./Managed", value:"직영차" },{url:"./AboutAutohub", value:"단지안내" },{url:"./CCenter", value:"고객센터" }
 
-]
+] 
+{/*  버튼과 클릭시 이동할수 있게 하는 방법 모색중 */}
+
   const LeftMenus  = [["./Buy","실떼"],["./Sell","팔때"],["./Managed","직영차"],["./AboutAutohub","단지안내"],["./CCenter","고객센터"]];
 
   const LeftMenuList = LeftMenus2.map((LeftMenus2) =>  <HeaderLeftList url={LeftMenus2.url}>{LeftMenus2.value}</HeaderLeftList>); {/* 윗 부분을 맵함수로 입력 */}
@@ -35,8 +42,20 @@ const LeftMenus2 = [
         <AutohubLogoPart>
           <AutohubLogo button type="button" onClick={HomeClick} src="/images/AUTOHUB Logo.png" />
         </AutohubLogoPart>
-      {/* 위에서 만든 맵함수를 적용 시킴 */ }  <HeaderLeftListPart> {LeftMenuList}</HeaderLeftListPart>
-        <HeaderRightListPart>{RightMenuList}</HeaderRightListPart>
+        <HeaderLeftListPart>
+<HeaderLeftList onClick={BuyClick}>살때</HeaderLeftList>
+<HeaderLeftList onClick={SellClick}>팔때</HeaderLeftList>
+<HeaderLeftList onClick={ManagedClick}>직영차</HeaderLeftList>
+<HeaderLeftList onClick={AboutAutohub}>단지안내</HeaderLeftList>
+<HeaderLeftList onClick={CCenterClick}>고객센터</HeaderLeftList>
+<HeaderLeftList onClick={BuyClick}>프로모션</HeaderLeftList>
+
+        </HeaderLeftListPart>
+        <HeaderRightListPart>
+        <HeaderRightList onClick={JoinClick}>회원가입</HeaderRightList>
+        <HeaderRightList onClick={LoginClick}>로그인</HeaderRightList>
+
+        </HeaderRightListPart>
       </Header>
     </Body>
   );
@@ -74,7 +93,7 @@ const HeaderLeftListPart = styled.ul`
 const HeaderLeftList = styled.li`
   float: left;
 
-  padding: 13px 13px;
+  padding: 13px 10px;
   
   margin-left: 30px;
   text-decoration: none;

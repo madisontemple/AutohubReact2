@@ -35,12 +35,15 @@ function Home() {
   const StyledWrapper = styled.div`
   ${({flex}) => flex && 'display: flex;'}
 
-  
 
   `;
 
-  const Buttons = ["현대","기아","Bmw","벤츠","제네시스"];
-  const ButtonList = Buttons.map((Buttons) => <HeaderButton>{Buttons}</HeaderButton>);
+
+
+  const Buttons = ["현대","기아","Bmw","벤츠","제네시스", ];
+  const URLs = ["./Hyundai", "./Kia","./Benz","./Bmw","./Genesis"]
+  const ButtonList = Buttons.map((Buttons) => <HeaderButton>{Buttons}</HeaderButton>); {/* 버튼하고 클릭시 다른 페이지로 이동할수 있게 모색중 */}
+  
   const Questions = ["차량 구매시 필요서류는 무엇인가요?","차량 구매시 카드로 구매가 가능한가요?","대체구매(차량맞교환)가 가능한가요?"];
   const FAQLists = Questions.map((Questions) => <FAQList>{Questions}</FAQList>);
 
@@ -66,7 +69,14 @@ function Home() {
 </HeaderRightSearchPart>
 
 
-<HeaderButtonPart>{ButtonList}</HeaderButtonPart>
+<HeaderButtonPart>
+<HeaderButton onClick={HyundaiClick}>현대</HeaderButton>
+<HeaderButton onClick={KiaClick}>기아</HeaderButton>
+<HeaderButton onClick={BenzClick}>Bmw</HeaderButton>
+<HeaderButton onClick={BmwClick}>벤츠</HeaderButton>
+<HeaderButton onClick={GenesisClick}>제네시스</HeaderButton>
+
+</HeaderButtonPart>
 
 </HeaderRightPart>
 </HeaderRightWrapper>
@@ -75,6 +85,8 @@ function Home() {
 <MainWrapper>
 <MainLeftPart>
 <MainComment>인기있는 4대의 자동차</MainComment>
+
+
 <MainImagePart>
 <MainImage src="/images/Autohub.Main1.png" />
 

@@ -19,7 +19,7 @@ import {
   Login,
 } from "../pages";
 import { SearchResult, Hyundai, Kia, Benz, Bmw, Genesis } from "../pages";
-import { Floor, CharAutohub, Contact } from "../pages";
+import { Floor, Contact } from "../pages";
 import { C4F,C3F } from "../pages";
 import { Shop1, Shop2, Shop3, Shop4 } from "../pages";
 
@@ -33,7 +33,7 @@ function App() {
       <Switch>
         <Route exact path="/" exact component={Home} />
         <Route path="/Buy" component={Buy} />
-        {/* <Route path="/Sell" component={Sell} /> */}
+        <Route path="/Sell" component={Sell} />
         <Route path="/Managed" component={Managed} />
         <Route path="/AboutAutohub" component={AboutAutohub} />
         <Route path="/CCenter" component={CCenter} />
@@ -52,8 +52,7 @@ function App() {
         <Route path="/Shop3" component={Shop3} />
         <Route path="/Shop4" component={Shop4} />
 
-        <Route path="/AboutAutohub" component={AboutAutohub} />
-        <Route path="/CharAutohub" component={CharAutohub} />
+       
         <Route path="/Floor" component={Floor} />
         <Route path="/Contact" component={Contact} />
 
