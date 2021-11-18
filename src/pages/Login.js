@@ -27,21 +27,17 @@ function Login() {
 
   return (
     <Body>
-  <HeaderSearchWrapper>
+  <HeaderSearchWrapper flex jcr>
     <HeaderSearch></HeaderSearch>
     <BiSearch />
   </HeaderSearchWrapper>
-
-  <LoginStyledWrapper flex w >
-  <ImagePart>
-
+  <LoginStyledWrapper flex jcc aic  mt={"100px"}>
+  <ImagePart mt={"50px"}>
     <LoginImage src="/images/Login-image1.png" />
   </ImagePart>
-
-  <RightPart>
-<AutohubLogoPart>
+  <RightPart ml={"50px"}>
+<AutohubLogoPart flex jcc mt={"50px"}>
     <AutohubLogo src="/images/Autohub2 Logo.png" />
-
 </AutohubLogoPart>
 <Comment>중고차 구매!<br/>
  오토허브에서는 전 차종 직영관리로<br/>
@@ -51,24 +47,19 @@ function Login() {
 <IDInput placeholder="아이디"></IDInput>
 
 </IDInputPart>
-<PWInputPart>
+<PWInputPart mt={"20px"}>
 <PWInput  input type="password" placeholder="비밀번호"></PWInput>
-
 </PWInputPart>
 
-<ButtonPart>
+<ButtonPart mt={"20px"}>
   <LoginButton>로그인</LoginButton>
 </ButtonPart>
 
 <CheckBoxPart>
 
- 
-
-
 </CheckBoxPart>
 
-
-<CommentPart2>
+<CommentPart2 flex jcc mt={"50px"}>
   <Comment2>
     오토허브가 처음이신가요?
   </Comment2>
@@ -76,23 +67,14 @@ function Login() {
 
 <KakaoLogoPart>
 <KakaoLogo src="/images/KakaoLogo.png" />
-
 </KakaoLogoPart>
 
-<KakaoButtonPart>
-<KakaoButton>
+<KakaoButtonPart mt={"50px"}>
 
-카카오톡으로 로그인하기</KakaoButton>
-
+<KakaoButton>카카오톡으로 로그인하기</KakaoButton>
 </KakaoButtonPart>
   </RightPart>
-
-
-
-  </LoginStyledWrapper>
-      
-
-      
+  </LoginStyledWrapper>      
     </Body>
   );
 }
@@ -103,49 +85,53 @@ padding: 0;
 box-sizing: border-box;
 `;
 
-const LoginStyledWrapper = styled.div`
+const StyledWrapper = styled.div`
 ${({flex}) => flex && 'display: flex;'}
-${({w}) => w && 'justify-content: center;'}
-${({h}) => h && 'align-items: center;'}
+${({jcc}) => jcc && 'justify-content: center;'}
+${({jcr}) => jcr && 'justify-content: right;'}
+${({aic}) => aic && 'align-items: center;'}
 ${({column}) => column && 'flex-direction:column;'}
 ${({center}) => center && 'text-align: center;'}
 ${({left}) => left && 'text-align: left;'}
 ${({right}) => right && 'text-align: right;'}
-
-
+${({mt}) => mt && `margin-top: ${mt}`}
+${({mr}) => mr && `margin-right: ${mr}`}
+${({mb}) => mb && `margin-bottom: ${mb}`}
+${({ml}) => ml && `margin-left: ${ml}`}
+${({pt}) => pt && `padding-top: ${pt}`}
+${({pr}) => pr && `padding-right: ${pr}`}
+${({pl}) => pl && `padding-top: ${pl}`}
+${({pt}) => pt && `padding-top: ${pt}`}
+${({width}) => width && `width: ${width}`}
+${({height}) => height && `height: ${height}`}
+${({fs}) => fs && `font-size: ${fs}`}
+${({fw}) => fw && `font-weight: ${fw}`}
 `;
-const Box = styled.div`
-width: 300px;
-height: 300px;
-background-color: blue;
-`;
-const HeaderSearchWrapper = styled.div`
 
+const LoginStyledWrapper = styled(StyledWrapper)`
 `;
 
+const HeaderSearchWrapper = styled(StyledWrapper)`
+`;
 const HeaderSearch = styled.input`
 width: 25rem;
 height: 3rem;
+border-style: none;
 border-radius: 20px;
-margin-top: 100px;
-
+margin-top: 15px;
+margin-right: 240px;
+z-index: 3;
+position: fixed;
 `;
-const ImagePart = styled.div`
-margin-top: 50px;
+const ImagePart = styled(StyledWrapper)`
 `;
 const LoginImage = styled.img`
-height: 45rem;
-width: 45rem;
+height: 40rem;
+width: 40rem;
 `;
-const RightPart = styled.div`
-width: 50vh;
-
-
+const RightPart = styled(StyledWrapper)`
 `;
-const AutohubLogoPart = styled.div`
-display: flex;
-justify-content: center;
-margin-top: 50px;
+const AutohubLogoPart = styled(StyledWrapper)`
 `;
 const AutohubLogo = styled.img`
 width: 200px;
@@ -154,12 +140,8 @@ height: 50px;
 const Comment = styled.h2`
 text-align: center;
 font-size: 25px;
-
 `;
-
-const IDInputPart = styled.div`
-display: flex;
-justify-content: center;
+const IDInputPart = styled(StyledWrapper)`
 
 `;
 const IDInput = styled.input`
@@ -170,11 +152,7 @@ height: 40px;
 background-color:#E8E6E5   ;
 border-style: none;
 `;
-const PWInputPart = styled.div`
-display: flex;
-justify-content: center;
-margin-top: 20px;
-
+const PWInputPart = styled(StyledWrapper)`
 `;
 const PWInput = styled.input`
 font-size: 17px;
@@ -184,10 +162,7 @@ height: 40px;
 background-color:#E8E6E5   ;
 border-style: none;
 `;
-const ButtonPart = styled.div`
-  display: flex;
-justify-content: center;
-margin-top: 20px;
+const ButtonPart = styled(StyledWrapper)`
 `;
 const LoginButton = styled.button`
 width: 410px;
@@ -200,21 +175,14 @@ background-color: #f11843;
 color: white;
 cursor: pointer;
 `;
-const CheckBoxPart = styled.div`
-
+const CheckBoxPart = styled(StyledWrapper)`
 `;
-const CommentPart2 = styled.div`
-       display: flex;
-justify-content: center;
-margin-top: 60px;
+const CommentPart2 = styled(StyledWrapper)`
 `;
 const Comment2 = styled.p`
 border-style: 1px solid black;
 `;
-const KakaoButtonPart = styled.div`
-  display: flex;
-justify-content: center;
-margin-top: 60px;
+const KakaoButtonPart = styled(StyledWrapper)`
 `;
 const KakaoButton = styled.button`
 width: 410px;
@@ -223,14 +191,11 @@ font-size: 17px;
 font-weight: bold;
 border-radius: 10px;
 border-style: none;
-background-color: #FFEC01 ;
+background-color: #FBE600 ;
 color: #362B00;
-font-weight: bold;
 cursor: pointer;
 `;
-const KakaoLogoPart = styled.div`
-display: flex;
-justify-content: centeer;
+const KakaoLogoPart = styled(StyledWrapper)`
 position: relative;
 top: 110px;
 left: 130px;
@@ -241,10 +206,6 @@ height: 40px;
 
 cursor: pointer;
 `;
-const FooterWrapper = styled.div`
-
+const FooterWrapper = styled(StyledWrapper)`
 `;
-
-
-
 export default Login;

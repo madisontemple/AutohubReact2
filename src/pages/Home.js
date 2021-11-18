@@ -34,11 +34,7 @@ function Home() {
 
   const StyledWrapper = styled.div`
   ${({flex}) => flex && 'display: flex;'}
-
-
   `;
-
-
 
   const Buttons = ["현대","기아","Bmw","벤츠","제네시스", ];
   const URLs = ["./Hyundai", "./Kia","./Benz","./Bmw","./Genesis"]
@@ -51,7 +47,7 @@ function Home() {
   
   return (
     <Body>
-    <HeaderWrapper>
+    <HeaderWrapper h={"350px"} pt={"50px"} flex jcc>
     <HeaderImagePart>
     <HeaderImage src="/images/Autohub.HeadersLeft.png" />
 
@@ -59,7 +55,7 @@ function Home() {
     
 <HeaderRightWrapper>
 
-<HeaderRightPart>
+<HeaderRightPart pt={"80px"} pr={"20px"} pl={"30px"} ml={"30px"}>
 
 <HeaderRightPartComment>지금 바로 키워드로 검색해보세요! 무엇이든 찾아드립니다.</HeaderRightPartComment>
 
@@ -69,7 +65,7 @@ function Home() {
 </HeaderRightSearchPart>
 
 
-<HeaderButtonPart>
+<HeaderButtonPart  mt={"10px"}>
 <HeaderButton onClick={HyundaiClick}>현대</HeaderButton>
 <HeaderButton onClick={KiaClick}>기아</HeaderButton>
 <HeaderButton onClick={BenzClick}>Bmw</HeaderButton>
@@ -82,7 +78,9 @@ function Home() {
 </HeaderRightWrapper>
 
     </HeaderWrapper>
-<MainWrapper>
+
+
+<MainWrapper flex jcc mt={"30px"}>
 <MainLeftPart>
 <MainComment>인기있는 4대의 자동차</MainComment>
 
@@ -94,29 +92,25 @@ function Home() {
 
 </MainLeftPart>
 
-<MainRightWrapper>
-
-<MainRightPart>
+<MainRightWrapper pt={"70px"}>
+<MainRightPart pt={"10px"} pr={"40px"} mb={"20px"}> 
 <MainRightImage src="/images/Autohub.Main2.png" />
 <MainRightImage src="/images/Autohub.Main3.png" />
-
-
 </MainRightPart>
-<MainRightPart>
+<MainRightPart pt={"10px"} pr={"40px"} pb={"20px"}>
 <MainRightImage src="/images/Autohub.Main4.png" />
 <MainRightImage src="/images/Autohub.Main5.png" />
-
 </MainRightPart>
 </MainRightWrapper>
 </MainWrapper>
     
-    <FinsetNWrapper>
+    <FinsetNWrapper flex jcc>
       <FinsetNImagePart>
         <FinsetNImage src="/images/FinsetImage.png" />
       </FinsetNImagePart>
     </FinsetNWrapper>
-    <FAQWrapper>
-      <FAQPart>
+    <FAQWrapper flex jcc mt={"60px"}>
+      <FAQPart pr={"15px"}>
       
         <FAQ>FAQ</FAQ>
         <HR />
@@ -127,33 +121,30 @@ function Home() {
         <FAQList>대체구매(차량맞교환)가 가능한가요?</FAQList>
         <HR />
       </FAQPart>
-      <CustomerCenterPart>
+      <CustomerCenterPart ml={"20px"}>
       <FAQTxtPart>
       <FAQ>고객센터</FAQ>
 
       </FAQTxtPart>
-      <CustomerCenterSquare> <h1 style={{color:"#f11843"}}>1811-9393</h1>
+      <CustomerCenterSquare width={"300px"} height={"160px"} pt={"5px"} pb={"5px"} pl={"20px"}> 
+      <h1 style={{color:"#f11843"}}>1811-9393</h1>
       <p>연중무휴</p>
       <p>09:00~18:00</p>
       </CustomerCenterSquare>
       </CustomerCenterPart>
 
-      <CustomerCenterSquare2Part >
+      <CustomerCenterSquare2Part mt={"50px"} ml={"10px"} pt={"10px"} pb={"10px"}>
 
 
-      <CustomerCenterSquare2>
-
+      <CustomerCenterSquare2 width={"300px"} height={"70px"} mt={"10px"}>
+  
       </CustomerCenterSquare2>
 
-      <CustomerCenterSquare2>
+      <CustomerCenterSquare2 width={"300px"} height={"70px"} mt={"10px"}>
 
       </CustomerCenterSquare2>
       
       </CustomerCenterSquare2Part>
-
-
-
-
     </FAQWrapper>
 
 
@@ -161,21 +152,43 @@ function Home() {
     </Body>
   );
 }
+
+const StyledWrapper = styled.div`
+${({flex}) => flex && 'display: flex;'}
+${({jcc}) => jcc && 'justify-content: center;'}
+${({jcr}) => jcr && 'justify-content: right;'}
+${({aic}) => aic && 'align-items: center;'}
+${({column}) => column && 'flex-direction:column;'}
+${({center}) => center && 'text-align: center;'}
+${({left}) => left && 'text-align: left;'}
+${({right}) => right && 'text-align: right;'}
+
+${({mt}) => mt && `margin-top: ${mt};`}
+${({mr}) => mr && `margin-right: ${mr};`}
+${({mb}) => mb && `margin-bottom: ${mb};`}
+${({ml}) => ml && `margin-left: ${ml};`}
+
+${({pt}) => pt && `padding-top: ${pt};`}
+${({pr}) => pr && `padding-right: ${pr};`}
+${({pl}) => pl && `padding-top: ${pl};`}
+${({pt}) => pt && `padding-top: ${pt};`}
+
+${({width}) => width && `width: ${width};`}
+${({height}) => height && `height: ${height};`}
+
+${({fs}) => fs && `font-size: ${fs};`}
+${({fw}) => fw && `font-weight: ${fw};`}
+`;
+
 const Body = styled.body`
 box-sizing: border-box;
 margin: 0;
 padding: 0;
 `;
-const HeaderWrapper = styled.div`
-height: 350px;
-padding-top: 50px;
-background-color:#f11843 ;
-display: flex;
-justify-content: center;
-
+const HeaderWrapper = styled(StyledWrapper)`
+background-color: #F11843;
 `;
-const HeaderImagePart = styled.div`
-
+const HeaderImagePart = styled(StyledWrapper)`
 `;
 const HeaderImage = styled.img`
 width: 35rem;
@@ -183,35 +196,25 @@ height: 15rem;
 padding: 60px 0px;
 
 `;
-const HeaderRightWrapper = styled.div`
+const HeaderRightWrapper = styled(StyledWrapper)`
 
 `;
-const HeaderRightPart = styled.div`
-
-padding: 80px 20px 0px 30px;
-margin-left: 30px;
-
-
+const HeaderRightPart = styled(StyledWrapper)`
 `;
-const HeaderRightCommentPart = styled.div`
+const HeaderRightCommentPart = styled(StyledWrapper)`
 
 `;
 const HeaderRightPartComment = styled.h2`
 color: #fff;
 font-size: 15px;
-
 padding-left: 10px;
-
-
 `;
-const HeaderRightSearchPart = styled.div`
-
+const HeaderRightSearchPart = styled(StyledWrapper)`
 `;
 const SearchInput = styled.input`
 border-radius: 40px;
 margin-top: 10px;
-
-padding: 10px 0 0 30px;
+padding: 5px 0px 0px 30px;
 width: 40rem;
 height: 70px;
 border-style: none;
@@ -219,9 +222,7 @@ font-size: 30px;
 outline: none;
 
 `;
-const HeaderButtonPart = styled.div`
-margin: 10px 0px;
-
+const HeaderButtonPart = styled(StyledWrapper)`
 `;
 const HeaderButton = styled.button`
   /* background: ${props => props.primary ? "#f11843" : "white"}; */
@@ -238,34 +239,24 @@ const HeaderButton = styled.button`
     background-color: #C13B2E;
   }
 `;
-const MainWrapper = styled.div`
-display: flex;
-justify-content: center;
-margin-top: 30px;
+const MainWrapper = styled(StyledWrapper)`
 `;
-const MainPart = styled.div`
-
+const MainPart = styled(StyledWrapper)`
 `;
-const MainLeftPart = styled.div`
-
+const MainLeftPart = styled(StyledWrapper)`
 `;
 const MainComment = styled.h1`
-
 `;
-const MainImagePart = styled.div`
-
+const MainImagePart = styled(StyledWrapper)`
 `;
 const MainImage = styled.img`
 width: 40rem;
 height: 40rem;
 border-radius: 10px;
 `;
-const MainRightWrapper = styled.div`
-padding-top: 70px;
+const MainRightWrapper = styled(StyledWrapper)`
 `;
-const MainRightPart = styled.div`
-padding: 10px 40px 20px 0px;
-
+const MainRightPart = styled(StyledWrapper)`
 `;
 
 const MainRightImage = styled.img`
@@ -274,12 +265,9 @@ height: 19rem;
 border-radius: 10px;
 margin-left: 20px;
 `;
-const FinsetNWrapper = styled.div`
-display: flex;
-justify-content: center;
+const FinsetNWrapper = styled(StyledWrapper)`
 `;
-const FinsetNImagePart = styled.div`
-
+const FinsetNImagePart = styled(StyledWrapper)`
 `;
 const FinsetNImage = styled.img`
 margin-top: 60px;
@@ -287,21 +275,13 @@ padding-right: 40px;
 width: 80.5rem;
 `;
 
-const FAQWrapper = styled.div`
-display: flex;
-justify-content: center;
-
-margin-top: 60px;
+const FAQWrapper = styled(StyledWrapper)`
 `;
-const FAQPart = styled.div`
-padding-right: 15px;
-
+const FAQPart = styled(StyledWrapper)`
 `;
-const FAQTxtPart = styled.div`
-
+const FAQTxtPart = styled(StyledWrapper)`
 `;
 const FAQ = styled.h2`
-
 `;
 const HR = styled.hr`
 width: 40rem;
@@ -310,38 +290,17 @@ const FAQList = styled.p`
 font-weight: bold;
 font-size: 17px;
 `;
-const CustomerCenterPart = styled.div`
-margin-left: 20px;
-
+const CustomerCenterPart = styled(StyledWrapper)`
 `;
-const CustomerCenterSquare = styled.div`
-  width: 300px;
-  height: 160px;
+const CustomerCenterSquare = styled(StyledWrapper)`
   border-radius: 10px;
   outline: 1px solid black;
-  padding: 5px 0px 5px 30px;
-  
 `;
-const CustomerCenterSquare2Part = styled.div`
-margin-top: 50px;
-padding: 10px 0px 10px 10px;
+const CustomerCenterSquare2Part = styled(StyledWrapper)`
 `;
-const CustomerCenterSquare2 = styled.div`
-  width: 300px;
-  height: 70px;
+const CustomerCenterSquare2 = styled(StyledWrapper)`
   border-radius: 10px;
   outline: 1px solid black;
-  margin: 10px 0px 0px 0px;
-  padding: 7px 0px 0px 10px;
-  
 `;
-
-
-
-
-
-
-
-
 
 export default Home;

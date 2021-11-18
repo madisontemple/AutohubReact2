@@ -7,14 +7,8 @@ import { FaSearch } from "react-icons/fa";
 import { BiBuildings } from "react-icons/bi";
 
 
-
-
-
-
 function AboutAutohub() {
   
- 
-
   const history = useHistory();
   const BuyClick = () => history.push("./Buy");
   const SellClick = () => history.push("./Sell");
@@ -40,12 +34,6 @@ function AboutAutohub() {
 
   const Menus = ["주요특장점","층별안내","오시는 길","프로모션"];
   const MenuLists = Menus.map((Menus) => <LI>{Menus}</LI>);
-
-  // useEffect
-  // useState
-  // useCallback
-
-  // useInput
 
   
 
@@ -103,15 +91,14 @@ function AboutAutohub() {
 
 
   return (
+    
     <Body>
+      
+
+      
       <Header>
-        <HeaderListPart flex>
-          <ul style={{}}>
-            <ALI button type="button" onClick={AboutAutohub}>
-              단지안내
-            </ALI>
-            <MenuLists>{Menus}</MenuLists>
-          </ul>
+        <HeaderListPart>
+         
         </HeaderListPart>
       </Header>
 
