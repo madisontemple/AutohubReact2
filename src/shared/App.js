@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import styled from "styled-components";
+import GlobalStyles from "./GlobalStyles"
 import Search from "../icon/search-solid.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -8,8 +9,9 @@ import { FaSearch } from "react-icons/fa";
 import { FiArrowRightCircle } from "react-icons/fi";
 import "../index.css";
 import Navbar from "../pages/Navbar";
+import Home from "../pages/Home";
 import {
-  Home,
+  
   Buy,
   Sell,
   Managed,

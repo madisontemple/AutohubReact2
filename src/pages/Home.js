@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Search from "../icon/search-solid.svg";
-// import Navbar from "./Navbar";
+
+import Navbar from "./Navbar";
 import { SearchBox } from "react-instantsearch-dom";
 import { useHistory } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import { FiArrowRightCircle } from "react-icons/fi";
+import Wrapper from "../Components/Wrapper";
 
 
 function Home() {
@@ -47,7 +48,7 @@ function Home() {
   
   return (
     <Body>
-    <HeaderWrapper h={"350px"} pt={"50px"} flex jcc>
+    <HeaderWrapper h={"350px"} pt={"50px"} flex jc={"center"}>
     <HeaderImagePart>
     <HeaderImage src="/images/Autohub.HeadersLeft.png" />
 
@@ -65,7 +66,7 @@ function Home() {
 </HeaderRightSearchPart>
 
 
-<HeaderButtonPart  mt={"10px"}>
+<HeaderButtonPart  mt={"20px"}>
 <HeaderButton onClick={HyundaiClick}>현대</HeaderButton>
 <HeaderButton onClick={KiaClick}>기아</HeaderButton>
 <HeaderButton onClick={BenzClick}>Bmw</HeaderButton>
@@ -80,7 +81,7 @@ function Home() {
     </HeaderWrapper>
 
 
-<MainWrapper flex jcc mt={"30px"}>
+<MainWrapper flex jc={"center"} mt={"30px"}>
 <MainLeftPart>
 <MainComment>인기있는 4대의 자동차</MainComment>
 
@@ -104,12 +105,12 @@ function Home() {
 </MainRightWrapper>
 </MainWrapper>
     
-    <FinsetNWrapper flex jcc>
+    <FinsetNWrapper flex jc={"center"}>
       <FinsetNImagePart>
         <FinsetNImage src="/images/FinsetImage.png" />
       </FinsetNImagePart>
     </FinsetNWrapper>
-    <FAQWrapper flex jcc mt={"60px"}>
+    <FAQWrapper flex jc={"center"} mt={"60px"}>
       <FAQPart pr={"15px"}>
       
         <FAQ>FAQ</FAQ>
@@ -153,42 +154,15 @@ function Home() {
   );
 }
 
-const StyledWrapper = styled.div`
-${({flex}) => flex && 'display: flex;'}
-${({jcc}) => jcc && 'justify-content: center;'}
-${({jcr}) => jcr && 'justify-content: right;'}
-${({aic}) => aic && 'align-items: center;'}
-${({column}) => column && 'flex-direction:column;'}
-${({center}) => center && 'text-align: center;'}
-${({left}) => left && 'text-align: left;'}
-${({right}) => right && 'text-align: right;'}
-
-${({mt}) => mt && `margin-top: ${mt};`}
-${({mr}) => mr && `margin-right: ${mr};`}
-${({mb}) => mb && `margin-bottom: ${mb};`}
-${({ml}) => ml && `margin-left: ${ml};`}
-
-${({pt}) => pt && `padding-top: ${pt};`}
-${({pr}) => pr && `padding-right: ${pr};`}
-${({pl}) => pl && `padding-top: ${pl};`}
-${({pt}) => pt && `padding-top: ${pt};`}
-
-${({width}) => width && `width: ${width};`}
-${({height}) => height && `height: ${height};`}
-
-${({fs}) => fs && `font-size: ${fs};`}
-${({fw}) => fw && `font-weight: ${fw};`}
-`;
-
 const Body = styled.body`
 box-sizing: border-box;
 margin: 0;
 padding: 0;
 `;
-const HeaderWrapper = styled(StyledWrapper)`
+const HeaderWrapper = styled(Wrapper)`
 background-color: #F11843;
 `;
-const HeaderImagePart = styled(StyledWrapper)`
+const HeaderImagePart = styled(Wrapper)`
 `;
 const HeaderImage = styled.img`
 width: 35rem;
@@ -196,12 +170,12 @@ height: 15rem;
 padding: 60px 0px;
 
 `;
-const HeaderRightWrapper = styled(StyledWrapper)`
+const HeaderRightWrapper = styled(Wrapper)`
 
 `;
-const HeaderRightPart = styled(StyledWrapper)`
+const HeaderRightPart = styled(Wrapper)`
 `;
-const HeaderRightCommentPart = styled(StyledWrapper)`
+const HeaderRightCommentPart = styled(Wrapper)`
 
 `;
 const HeaderRightPartComment = styled.h2`
@@ -209,11 +183,11 @@ color: #fff;
 font-size: 15px;
 padding-left: 10px;
 `;
-const HeaderRightSearchPart = styled(StyledWrapper)`
+const HeaderRightSearchPart = styled(Wrapper)`
 `;
 const SearchInput = styled.input`
 border-radius: 40px;
-margin-top: 10px;
+margin-top: 5px;
 padding: 5px 0px 0px 30px;
 width: 40rem;
 height: 70px;
@@ -222,7 +196,8 @@ font-size: 30px;
 outline: none;
 
 `;
-const HeaderButtonPart = styled(StyledWrapper)`
+const HeaderButtonPart = styled(Wrapper)`
+
 `;
 const HeaderButton = styled.button`
   /* background: ${props => props.primary ? "#f11843" : "white"}; */
@@ -239,24 +214,24 @@ const HeaderButton = styled.button`
     background-color: #C13B2E;
   }
 `;
-const MainWrapper = styled(StyledWrapper)`
+const MainWrapper = styled(Wrapper)`
 `;
-const MainPart = styled(StyledWrapper)`
+const MainPart = styled(Wrapper)`
 `;
-const MainLeftPart = styled(StyledWrapper)`
+const MainLeftPart = styled(Wrapper)`
 `;
 const MainComment = styled.h1`
 `;
-const MainImagePart = styled(StyledWrapper)`
+const MainImagePart = styled(Wrapper)`
 `;
 const MainImage = styled.img`
 width: 40rem;
 height: 40rem;
 border-radius: 10px;
 `;
-const MainRightWrapper = styled(StyledWrapper)`
+const MainRightWrapper = styled(Wrapper)`
 `;
-const MainRightPart = styled(StyledWrapper)`
+const MainRightPart = styled(Wrapper)`
 `;
 
 const MainRightImage = styled.img`
@@ -265,9 +240,9 @@ height: 19rem;
 border-radius: 10px;
 margin-left: 20px;
 `;
-const FinsetNWrapper = styled(StyledWrapper)`
+const FinsetNWrapper = styled(Wrapper)`
 `;
-const FinsetNImagePart = styled(StyledWrapper)`
+const FinsetNImagePart = styled(Wrapper)`
 `;
 const FinsetNImage = styled.img`
 margin-top: 60px;
@@ -275,11 +250,11 @@ padding-right: 40px;
 width: 80.5rem;
 `;
 
-const FAQWrapper = styled(StyledWrapper)`
+const FAQWrapper = styled(Wrapper)`
 `;
-const FAQPart = styled(StyledWrapper)`
+const FAQPart = styled(Wrapper)`
 `;
-const FAQTxtPart = styled(StyledWrapper)`
+const FAQTxtPart = styled(Wrapper)`
 `;
 const FAQ = styled.h2`
 `;
@@ -290,15 +265,15 @@ const FAQList = styled.p`
 font-weight: bold;
 font-size: 17px;
 `;
-const CustomerCenterPart = styled(StyledWrapper)`
+const CustomerCenterPart = styled(Wrapper)`
 `;
-const CustomerCenterSquare = styled(StyledWrapper)`
+const CustomerCenterSquare = styled(Wrapper)`
   border-radius: 10px;
   outline: 1px solid black;
 `;
-const CustomerCenterSquare2Part = styled(StyledWrapper)`
+const CustomerCenterSquare2Part = styled(Wrapper)`
 `;
-const CustomerCenterSquare2 = styled(StyledWrapper)`
+const CustomerCenterSquare2 = styled(Wrapper)`
   border-radius: 10px;
   outline: 1px solid black;
 `;
