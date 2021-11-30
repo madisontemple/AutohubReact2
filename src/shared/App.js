@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import styled from "styled-components";
-import GlobalStyles from "./GlobalStyles"
+import GlobalStyles from "./GlobalStyles";
 import Search from "../icon/search-solid.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -11,7 +11,6 @@ import "../index.css";
 import Navbar from "../pages/Navbar";
 import Home from "../pages/Home";
 import {
-  
   Buy,
   Sell,
   Managed,
@@ -21,13 +20,12 @@ import {
   Login,
 } from "../pages";
 import { SearchResult, Hyundai, Kia, Benz, Bmw, Genesis } from "../pages";
-import { Floor, Contact } from "../pages";
-import { C4F,C3F } from "../pages";
+import { Floor } from "../pages/";
+
+import { C4F, C3F } from "../pages";
 import { Shop1, Shop2, Shop3, Shop4 } from "../pages";
 
 function App() {
-
-  
   return (
     <Router>
       <Navbar />
@@ -54,13 +52,10 @@ function App() {
         <Route path="/Shop3" component={Shop3} />
         <Route path="/Shop4" component={Shop4} />
 
-       
-        <Route path="/Floor" component={Floor} />
-        <Route path="/Contact" component={Contact} />
+        <Route path="/IntroAutohub/Floor" component={Floor} />
 
         <Route path="/C4F" component={C4F} />
         <Route path="/C3F" component={C3F} />
-
       </Switch>
     </Router>
   );

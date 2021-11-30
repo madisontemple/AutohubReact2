@@ -22,7 +22,7 @@ export { default as Shop4 } from "./Shop4";
 
 
 export { default as CharAutohub } from "./CharAutohub";
-export { default as Floor } from "./Floor";
+export { default as Floor } from "./IntroAutohub/Floor";
 export { default as Contact } from "./Contact";
 
 export { default as C4F } from "./C4F" ;
